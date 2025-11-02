@@ -21,13 +21,13 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <FaUtensils className="text-primary text-2xl mr-2" />
-            <span className="text-2xl font-bold text-primary">MealMate</span>
+            <span className="text-2xl font-bold text-secondary">MealMate</span>
           </div>
           <div className="hidden md:flex space-x-8">
             <Link to="hero" smooth={true} className="text-secondary hover:text-primary cursor-pointer">Home</Link>
-            <Link to="how-it-works" smooth={true} className="text-secondary hover:text-primary cursor-pointer">Browse Meals</Link>
-            <Link to="popular-meals" smooth={true} className="text-secondary hover:text-primary cursor-pointer">About</Link>
-            <Link to="testimonials" smooth={true} className="text-secondary hover:text-primary cursor-pointer">Contact</Link>
+            <Link to="how-it-works" smooth={true} className="text-secondary hover:text-primary cursor-pointer">How It Works</Link>
+            <Link to="popular-meals" smooth={true} className="text-secondary hover:text-primary cursor-pointer">Popular Meals</Link>
+            <Link to="testimonials" smooth={true} className="text-secondary hover:text-primary cursor-pointer">Testimonials</Link>
           </div>
           <div className="flex space-x-4">
             <button className="text-secondary hover:text-primary">Sign In</button>
