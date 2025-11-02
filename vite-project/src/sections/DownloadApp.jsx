@@ -5,30 +5,33 @@ import LazyImage from '../components/LazyImage';
 
 const DownloadApp = () => {
   return (
-    <section className="py-20 bg-secondary text-accent">
+    <section id="download-app" className="py-20 bg-linear-to-r from-primary to-primary/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="text-accent"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Get the MealMate App
             </h2>
-            <p className="text-lg text-accent/80 mb-8">
-              Order on the go with our mobile app. Browse menus, track deliveries, and enjoy exclusive deals right from your phone.
+            <p className="text-lg mb-8 text-accent/90">
+              Download our mobile app for a seamless food ordering experience. Get exclusive deals, track your orders in real-time, and reorder your favorites with just one tap.
             </p>
+
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-accent text-secondary px-6 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors duration-200 flex items-center justify-center gap-3">
+              <button className="bg-secondary text-accent px-6 py-3 rounded-lg font-semibold hover:bg-secondary/80 transition-colors flex items-center justify-center space-x-2">
                 <FaGooglePlay className="text-xl" />
                 <div className="text-left">
                   <div className="text-xs">Get it on</div>
                   <div className="text-sm font-bold">Google Play</div>
                 </div>
               </button>
-              <button className="bg-accent text-secondary px-6 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors duration-200 flex items-center justify-center gap-3">
+
+              <button className="bg-secondary text-accent px-6 py-3 rounded-lg font-semibold hover:bg-secondary/80 transition-colors flex items-center justify-center space-x-2">
                 <FaApple className="text-xl" />
                 <div className="text-left">
                   <div className="text-xs">Download on the</div>
@@ -41,18 +44,15 @@ const DownloadApp = () => {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative mx-auto max-w-sm">
-              <LazyImage
-                src="/src/assets/images/app-mockup.png"
-                alt="MealMate mobile app mockup"
-                className="w-full h-auto"
-              />
-              <div className="absolute -inset-4 bg-primary/20 rounded-3xl blur-xl -z-10"></div>
-            </div>
+            <LazyImage
+              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+              alt="MealMate mobile app mockup"
+              className="rounded-2xl shadow-2xl max-w-sm mx-auto"
+            />
           </motion.div>
         </div>
       </div>

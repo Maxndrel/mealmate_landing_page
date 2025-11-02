@@ -1,57 +1,33 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaShoppingCart, FaCreditCard, FaTruck } from 'react-icons/fa';
+import { FaSearch, FaShoppingCart, FaTruck } from 'react-icons/fa';
 
 const HowItWorks = () => {
   const steps = [
     {
-      icon: <FaShoppingCart className="text-4xl text-primary" />,
-      title: 'Choose Your Meal',
-      description: 'Browse our menu of authentic Nigerian dishes and select your favorites.',
-      emoji: '🍛'
+      icon: FaSearch,
+      title: 'Choose Meal',
+      description: 'Browse our extensive menu of authentic Nigerian dishes and select your favorites.'
     },
     {
-      icon: <FaCreditCard className="text-4xl text-primary" />,
-      title: 'Place Your Order',
-      description: 'Secure payment and customize your order with special instructions.',
-      emoji: '💳'
+      icon: FaShoppingCart,
+      title: 'Place Order',
+      description: 'Add items to your cart, customize your order, and checkout securely online.'
     },
     {
-      icon: <FaTruck className="text-4xl text-primary" />,
-      title: 'Enjoy Fast Delivery',
-      description: 'Fresh, hot Nigerian meals delivered to your door in under 30 minutes.',
-      emoji: '🚴🏾'
+      icon: FaTruck,
+      title: 'Get Fast Delivery',
+      description: 'Sit back and relax as we deliver your hot, fresh meal right to your doorstep.'
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
-
   return (
-    <section id="how-it-works" className="py-20 bg-support">
+    <section id="how-it-works" className="py-20 bg-accent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
@@ -59,37 +35,32 @@ const HowItWorks = () => {
             How It Works
           </h2>
           <p className="text-lg text-secondary/70 max-w-2xl mx-auto">
-            Ordering your favorite Nigerian meals has never been easier. Follow these simple steps to enjoy authentic cuisine.
+            Getting your favorite Nigerian meal has never been easier. Follow these simple steps.
           </p>
         </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
-              className="bg-accent rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="bg-support p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow"
             >
-              <div className="mb-6 flex justify-center">
-                <div className="bg-primary/10 p-4 rounded-full">
-                  {step.icon}
-                </div>
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                <step.icon className="text-2xl text-accent" />
               </div>
               <h3 className="text-xl font-semibold text-secondary mb-4">
-                {step.title} {step.emoji}
+                {step.title}
               </h3>
               <p className="text-secondary/70">
                 {step.description}
               </p>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
