@@ -1,9 +1,6 @@
 import { motion } from 'framer-motion';
-import { Suspense, lazy } from 'react';
 import { FaStar, FaQuoteLeft } from 'react-icons/fa';
-
-// Lazy load the LazyImage component
-const LazyImage = lazy(() => import('../components/LazyImage'));
+import LazyImage from '../components/LazyImage';
 
 const Testimonials = () => {
   const testimonials = [
@@ -114,15 +111,11 @@ const Testimonials = () => {
 
               {/* Author */}
               <div className="flex items-center">
-                <Suspense fallback={
-                  <div className="w-12 h-12 bg-gray-200 rounded-full animate-pulse"></div>
-                }>
-                  <LazyImage
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover mr-4"
-                  />
-                </Suspense>
+                <LazyImage
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-12 h-12 rounded-full object-cover mr-4"
+                />
                 <div>
                   <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
                   <p className="text-sm text-gray-500">{testimonial.role}</p>
