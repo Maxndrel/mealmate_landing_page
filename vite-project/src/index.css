@@ -1,4 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #ff6b00;
+  --color-secondary: #1e1e1e;
+  --color-accent: #ffffff;
+  --color-support: #f4f4f4;
+}
 
 html {
   scroll-behavior: smooth;
